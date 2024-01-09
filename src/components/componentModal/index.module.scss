@@ -1,0 +1,143 @@
+.body {
+  display: flex;
+  min-width: 50vw;
+  max-width: 70vw;
+  min-height: 30vh;
+  max-height: 70vh;
+  padding: 40px 30px;
+  overflow-y: auto;
+  color: $light-color;
+  background-color: $secondary-color;
+  border-radius: 20px;
+
+  .left {
+    width: 50%;
+    height: 100%;
+    padding-right: 20px;
+    overflow-y: auto;
+    border-right: solid 2px $primary-color;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .github {
+      display: flex;
+      margin-bottom: 15px;
+
+      .githubTitle {
+        margin-right: 12px;
+        font-size: 22px;
+        line-height: 20px;
+      }
+
+      .githubText {
+        line-height: 18px;
+        color: $light-color;
+        text-decoration: underline;
+        word-break: break-all;
+        cursor: pointer;
+
+        &:hover {
+          color: $tertiary-color;
+        }
+      }
+    }
+
+    .desc {
+      padding: 15px 15px;
+      white-space: pre-wrap;
+      background-color: $primary-color;
+      border-radius: 15px;
+
+      .descItem {
+        word-break: break-all;
+
+        &:not(:first-child) {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+  .right {
+    width: 50%;
+    height: 100%;
+    padding-left: 20px;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .example {
+
+      .exampleTitle {
+        margin-bottom: 15px;
+        font-size: 22px;
+        line-height: 20px;
+      }
+      .exampleText {
+        padding: 15px 15px;
+        word-break: break-all;
+        white-space: pre-wrap;
+        background-color: $primary-color;
+        border-radius: 15px;
+      }
+    }
+
+    .preview {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 10px;
+      margin-top: 15px;
+      overflow: hidden;
+      background-color: rgb(231, 246, 242, 0.6);
+      border-radius: 15px;
+
+      .previewImage {
+        width: 100%;
+        aspect-ratio: 5/4;
+        border-radius: 15px;
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px){
+  .body {
+    flex-direction: column;
+    max-width: 90vw;
+    max-height: 80vh;
+    overflow-y: auto;
+
+    .left {
+      width: 100%;
+      height: auto;
+      padding-right: 0px;
+      overflow-y: visible;
+      border-right: none;
+
+      .github {
+        flex-direction: column;
+        
+        .githubText {
+          margin-top: 10px;
+        }
+      }
+    }
+
+    .right {
+      width: 100%;
+      height: auto;
+      padding-left: 0px;
+      overflow-y: visible;
+
+      .example {
+        margin-top: 20px;
+      }
+    }
+  }
+}

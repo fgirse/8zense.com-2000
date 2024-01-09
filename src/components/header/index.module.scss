@@ -1,0 +1,210 @@
+.container {
+  position: relative;
+
+  .nav {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    .navLeft {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .i18nSwitch {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100px;
+      height: 28px;
+    }
+
+    .githubIcon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      margin-left: 10px;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    .coffeeIcon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      margin-left: 10px;
+      background-color: $light-color;
+      border-radius: 6px;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .title {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+
+    .titleText {
+      position: relative;
+      font-size: 150px;
+      color: transparent;
+      text-align: left;
+      background-image: linear-gradient(to right, $primary-color, $secondary-color, $tertiary-color);
+      -webkit-background-clip: text;
+    }
+
+    .subTitleText {
+      font-size: 130px;
+    }
+
+    .titleIcon {
+      position: absolute;
+      top: 2.5em;
+      right: -1.3em;
+      z-index: 2;
+      padding: 1px 8px;
+      font-size: 22px;
+      color: #662549;
+      cursor: pointer;
+      background-color: #DE8F5F;
+      border-radius: 11px;
+      transition: transform 1s;
+      transform: rotateY(0deg) rotate(15deg);
+
+      &:hover{
+        transform: rotateY(180deg) rotate(15deg);
+      }
+    }
+  }
+
+  .desc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+
+    .descTextContainer {
+      position: relative;
+
+      .descTextContainerVal {
+        position: relative;
+        z-index: 2;
+        font-size: 34px;
+        color: transparent;
+        text-align: left;
+        -webkit-text-stroke: 0.5px $tertiary-color;
+      }
+
+      &::after  {
+        position: absolute;
+        right: -4px;
+        bottom: 11px;
+        z-index: 1;
+        width: 78%;
+        height: 14px;
+        content: "";
+        background-color: #662549;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 981px) {
+  .container {
+    .nav {
+      padding: 0 20px;
+    }
+  }
+}
+
+@media screen and (min-width:  700px) and (max-width: 980px) {
+  .container {
+    padding: 0 30px;
+
+    .title {
+      .titleText {
+        font-size: 130px;
+      }
+
+      .subTitleText {
+        font-size: 110px;
+      }
+
+      .titleIcon {
+        top: 47px;
+        right: -22px;
+        font-size: 18px;
+        border-radius: 8px;
+      }
+    }
+
+    .desc {
+      .descTextContainer {
+        .descTextContainerVal {
+          font-size: 26px;
+        }
+  
+        &::after  {
+          height: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .container {
+    padding: 0 15px;
+
+    .title {
+      padding-top: 70px;
+
+      .titleText {
+        font-size: 80px;
+      }
+
+      .subTitleText {
+        font-size: 80px;
+      }
+
+      .titleIcon {
+        top: 27px;
+        right: -21px;
+        font-size: 13px;
+        border-radius: 6px;
+      }
+    }
+
+    .desc {
+      .descTextContainer {
+        .descTextContainerVal {
+          font-size: 20px;
+        }
+  
+        &::after  {
+          bottom: 9px;
+          height: 7px;
+        }
+      }
+    }
+  }
+}
+
